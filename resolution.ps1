@@ -1,5 +1,5 @@
 # Set execution policy to bypass restrictions
-Set-ExecutionPolicy Bypass -Scope CurrentUser -Force
+#Set-ExecutionPolicy Bypass -Scope CurrentUser -Force
 
 # Define the resolution-setting function using Windows API
 $code = @"
