@@ -5,7 +5,7 @@ set "processName=resolution.exe"
 
 :: Stop the resolution.exe process if it's running
 echo Attempting to kill the %processName% process...
-taskkill /f /im "%processName%"
+taskkill /f /im "%processName%" >nul 2>&1
 
 :: Check if the process was successfully killed
 if %errorlevel% equ 0 (
@@ -25,4 +25,6 @@ if exist "%folderPath%" (
     echo FixResolution folder deleted successfully.
 )
 
-pause
+:: Wait 2 seconds before closing
+timeout /t 2 >nul
+exit
